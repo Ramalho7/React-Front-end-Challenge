@@ -1,8 +1,7 @@
 import React from "react";
-import Spinner from "./Spinner";
+import Spinner from "../components/Spinner";
 
 const CountryList = ({countries, loading}) => {
-    loading = true
     if (loading) return <Spinner/>
 
     return (

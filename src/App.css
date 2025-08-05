@@ -24,17 +24,17 @@ nav {
   height: 8vh;
 }
 
-nav p {
+nav a {
   font-size: 1.1rem;
   color: black;
   cursor: pointer;
 }
 
-nav p svg {
+nav a svg {
   color: var(--primary-color);
 }
 
-nav p:hover {
+nav a:hover {
   text-decoration: underline;
   color: var(--segundary-color);
 }
@@ -44,6 +44,21 @@ nav .center-menu-itens {
   justify-content: center;
   align-items: center;
   gap: 5vw;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--primary-color); 
 }
 
 .container-typewriter {
