@@ -4,11 +4,14 @@ import CountryList from './components/CountryList'
 import TypeWriter from './components/TypeWriter';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import SearchBar from './components/SearchBar';
+
 
 function App() {
 
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     fetch(
@@ -25,10 +28,11 @@ function App() {
 
   return (
     <div>
-      <Header/>
+      <Header />
       <TypeWriter />
-      <CountryList countries={countries} loading={loading} />
-      <Footer/>
+      <SearchBar onSearch={setSearch} />
+      <CountryList countries={countries} loading={loading} search={search}/>
+      <Footer />
     </div>
   )
 }

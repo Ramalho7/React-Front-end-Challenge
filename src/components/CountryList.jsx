@@ -1,8 +1,7 @@
 import React from "react";
 import Spinner from "./Spinner";
 
-const CountryList = ({countries, loading}) => {
-    loading = true
+const CountryList = ({countries, loading, search}) => {
     if (loading) return <Spinner/>
 
     return (
@@ -25,8 +24,10 @@ const CountryList = ({countries, loading}) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {countries.map((country) => (
-                        <tr key={country.name.common}>
+                    {countries.filter((country) => {
+                        return search.toLowerCase() === '' ? country : country.name.common.toLowerCase().includes(search.toLowerCase())
+                    }).map((country, index) => (
+                        <tr key={country.name.common} className="fade-in-country-list">
                             <td>
                                 <img src={country.flags.png}
                                     alt={country.name.common}
