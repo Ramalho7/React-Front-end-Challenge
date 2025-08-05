@@ -1,0 +1,25 @@
+.sort-container {
+    width: 100%;
+}
+
+.custom-select {
+    position: relative;
+    width: 100%;
+}
+
+.sort-select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.sort-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: var(--segundary-color);
+}
+

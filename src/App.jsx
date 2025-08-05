@@ -5,6 +5,7 @@ import TypeWriter from './components/TypeWriter';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import SearchBar from './components/SearchBar';
+import SortControl from './components/SortControl';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
+  const [sort, setSort] = useState({ keyToSort: "name", direction: "asc" });
 
   useEffect(() => {
     fetch(
@@ -30,8 +32,13 @@ function App() {
     <div>
       <Header />
       <TypeWriter />
-      <SearchBar onSearch={setSearch} />
-      <CountryList countries={countries} loading={loading} search={search}/>
+      <div className="search-sort-container">
+        <div className="search-sort">
+          <SearchBar onSearch={setSearch} />
+          <SortControl sort={sort} setSort={setSort} />
+        </div>
+      </div>
+      <CountryList countries={countries} loading={loading} search={search} sort={sort} setSort={setSort} />
       <Footer />
     </div>
   )

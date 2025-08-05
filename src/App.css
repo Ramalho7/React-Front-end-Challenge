@@ -15,8 +15,6 @@ body {
   font-family: 'Montserrat', sans-serif, 'Roboto';
 }
 
-
-
 nav {
   display: grid;
   align-items: center;
@@ -84,6 +82,36 @@ nav .center-menu-itens {
   to {
     width: 29ch;
   }
+}
+
+.search-sort-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+}
+
+.search-sort-container > .search-sort{
+  display: flex;
+  width: 80%;
+  gap: 3vw;
+}
+
+.search-sort-container > .search-sort > .SearchBar {
+  flex: 7; 
+}
+
+.search-sort-container > .search-sort > .sort-container {
+  flex: 2;
+}
+
+.search-sort{
+  display: inline-flex;
+  align-items: center;
+  gap: 5vw;
+  margin: 0 auto;
 }
 
 .table-container-countries {

@@ -1,15 +1,9 @@
 .SearchBar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-    width: 100vw;
+    width: 100%;
 }
 
 form{
-    width: 80%; 
-    max-width: 1200px;
+    width: 100%;
 }
 
 form input {
@@ -20,7 +14,6 @@ form input {
     border-bottom: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 0;
-    box-sizing: border-box; 
 }
 
 form input:focus{
