@@ -8,7 +8,7 @@ import SearchBar from './components/SearchBar';
 import SortControl from './components/SortControl';
 import Favorites from './components/Favorites';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronUp, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronUp, faStar, faTh, faList } from '@fortawesome/free-solid-svg-icons';
 import FavoritesCard from './components/FavoritesCard';
 import CountryCard from './components/CountryCard';
 
@@ -57,7 +57,7 @@ function App() {
             </div>
           </button>
           <button onClick={toggleView} className='btn-toggle-view'>
-            {isTableView ? "Exibir como cards" : "Exibir como tabela"}
+            {isTableView ? <FontAwesomeIcon icon={faTh} />  : <FontAwesomeIcon icon={faList} />}
           </button>
         </div>
       </div>
@@ -77,9 +77,10 @@ function App() {
               favorites={favorites}
               sort={sort}
               setSort={setSort}
+              setFavorites={setFavorites}
             />
           </div>
-        {/* react frament */} </> 
+          {/* react frament */} </>
       ) : (
         <>
           <CountryCard
@@ -92,11 +93,12 @@ function App() {
             setFavorites={setFavorites}
           />
           <div id="favorites-section">
-          <FavoritesCard
-            favorites={favorites}
-            sort={sort}
-            setSort={setSort}
-          />
+            <FavoritesCard
+              favorites={favorites}
+              sort={sort}
+              setSort={setSort}
+              setFavorites={setFavorites}
+            />
           </div>
         </>
       )}

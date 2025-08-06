@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import CountryCard from "./CountryCard";
 
-const FavoritesCard = ({ favorites, sort, setSort }) => {
+const FavoritesCard = ({ favorites, sort, setSort, setFavorites }) => {
     if (!favorites || favorites.length === 0) {
         return <p>Nenhum país foi favoritado ainda.</p>;
     }   
@@ -25,7 +25,7 @@ const FavoritesCard = ({ favorites, sort, setSort }) => {
                     sort={sort }
                     setSort={setSort}
                     favorites={favorites}
-                    setFavorites={() => { }}
+                    setFavorites={setFavorites}
                 />
             )}
         </div>

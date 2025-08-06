@@ -100,7 +100,7 @@ nav .center-menu-itens {
 }
 
 .search-sort-container > .search-sort > .SearchBar {
-  flex: 6; 
+  flex: 5; 
 }
 
 .search-sort-container > .search-sort > .sort-container {
@@ -109,6 +109,10 @@ nav .center-menu-itens {
 
 .search-sort-container > .search-sort > .btn-go-to-favorites {
   flex: 1;
+}
+
+.search-sort-container > .search-sort > .btn-toggle-view {
+  flex: .3;
 }
 
 .search-sort{
@@ -126,7 +130,6 @@ nav .center-menu-itens {
   color: white;
   border: none;
   width: fit-content;
-  padding: .2vw;
   height: 40px;
   padding: .3vw;
 }
@@ -153,6 +156,19 @@ nav .center-menu-itens {
   top: 0;
   left: 0;
   color: black;
+}
+
+.btn-toggle-view{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: none;
+}
+
+.btn-toggle-view svg{
+  color: var(--primary-color);
+  font-size: 2.5rem;
 }
 
 table {
@@ -187,6 +203,11 @@ tbody tr:nth-child(n){
 .fade-in-country-list {
   opacity: 0; 
   animation: fadeIn 0.8s ease-out forwards; 
+}
+
+.fade-in-country-card{
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 @keyframes fadeIn {

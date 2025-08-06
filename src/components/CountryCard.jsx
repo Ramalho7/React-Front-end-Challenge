@@ -29,8 +29,8 @@ const CountryCard = ({ countries, loading, favorites, setFavorites, search, sort
                 return search.toLowerCase() === ''
                     ? country
                     : country.name.common.toLowerCase().includes(search.toLowerCase());
-            }).map((country) => (
-                <div key={country.name.common} className="country-card">
+            }).map((country, index) => (
+                <div key={country.name.common} className="country-card fade-in-country-card" style={{ animationDelay: `${index * 0.05}s` }}>
                     <div className="icon-country-card-favorite">
                         <button onClick={() => toggleFavorite(country)}>
                             <FontAwesomeIcon
