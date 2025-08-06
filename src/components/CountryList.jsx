@@ -1,16 +1,27 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretUp, faCaretDown } from "@fortawesome/free-solid-svg-icons"; 
+import { faCaretUp, faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as faStarRegular } from "@fortawesome/free-regular-svg-icons";
 import Spinner from "./Spinner";
 
-const CountryList = ({ countries, loading, search, sort, setSort }) => {
+const CountryList = ({ countries, loading, search, sort, setSort, favorites, setFavorites }) => {
 
     const headers = [
         { key: "flags", label: "Bandeira" },
         { key: "name", label: "Nome" },
         { key: "region", label: "Região" },
         { key: "population", label: "População" },
+        { key: "favorite", label: "Favoritos" }
     ];
+
+    const toggleFavorite = (country) => {
+        if (favorites.some(fav => fav.name.common === country.name.common))
+            setFavorites(favorites.filter(fav => fav.name.common != country.name.common))
+        else {
+            setFavorites([...favorites, country])
+        }
+    }
 
     function handleHeaderClick(header) {
         setSort({
@@ -21,11 +32,11 @@ const CountryList = ({ countries, loading, search, sort, setSort }) => {
     }
 
 
-    function getSortedArray(arrayToSort){
-        if(sort.direction === "asc"){
-            return arrayToSort.sort((a,b) => (a[sort.keyToSort] > b[sort.keyToSort] ? 1 : -1))
+    function getSortedArray(arrayToSort) {
+        if (sort.direction === "asc") {
+            return arrayToSort.sort((a, b) => (a[sort.keyToSort] > b[sort.keyToSort] ? 1 : -1))
         }
-        return arrayToSort.sort((a,b) => (a[sort.keyToSort] > b[sort.keyToSort] ? -1 : 1))
+        return arrayToSort.sort((a, b) => (a[sort.keyToSort] > b[sort.keyToSort] ? -1 : 1))
     }
 
     if (loading) return <Spinner />;
@@ -67,6 +78,14 @@ const CountryList = ({ countries, loading, search, sort, setSort }) => {
                                 <td>{country.name.common}</td>
                                 <td>{country.region}</td>
                                 <td>{country.population.toLocaleString()}</td>
+                                <td>
+                                    <button onClick={() => toggleFavorite(country)}>
+                                        <FontAwesomeIcon
+                                            icon={favorites.some(fav => fav.name.common === country.name.common) ? faStar : faStarRegular}
+                                            style={{ color: favorites.some(fav => fav.name.common === country.name.common) ? "gold" : "gray" }}
+                                        />
+                                    </button>
+                                </td>
                             </tr>
                         ))}
                 </tbody>

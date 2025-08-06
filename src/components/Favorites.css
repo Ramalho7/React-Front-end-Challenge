@@ -1,0 +1,12 @@
+.favorites-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6vh;
+    margin-bottom: 6vh;
+}
+
+.favorites-container h2{
+    margin-bottom: 3vh;
+}
