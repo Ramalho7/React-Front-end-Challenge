@@ -9,7 +9,7 @@ import SortControl from './components/SortControl';
 import Favorites from './components/Favorites';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp, faStar } from '@fortawesome/free-solid-svg-icons';
-
+import CountryCard from './components/CountryCard';
 
 function App() {
 
@@ -18,6 +18,7 @@ function App() {
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState({ keyToSort: "name", direction: "asc" });
   const [favorites, setFavorites] = useState([])
+  const [isTableView, setIsTableView] = useState(true);
 
   useEffect(() => {
     fetch(
@@ -33,8 +34,12 @@ function App() {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({top: 0, behavior: "smooth"});
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const toggleView = () => {
+    setIsTableView(!isTableView);
+  }
 
   return (
     <div>
@@ -50,16 +55,33 @@ function App() {
               <FontAwesomeIcon icon={faChevronDown} />
             </div>
           </button>
+          <button onClick={toggleView} className='btn-toggle-view'>
+            {isTableView ? "Exibir como cards" : "Exibir como tabela"}
+          </button>
         </div>
       </div>
-      <CountryList
-        countries={countries}
-        loading={loading}
-        search={search}
-        sort={sort}
-        setSort={setSort}
-        favorites={favorites}
-        setFavorites={setFavorites} />
+      {isTableView ? (
+        <CountryList
+          countries={countries}
+          loading={loading}
+          search={search}
+          sort={sort}
+          setSort={setSort}
+          favorites={favorites}
+          setFavorites={setFavorites} />
+      ) : (
+        <CountryCard
+          countries={countries}
+          loading={loading}
+          favorites={favorites}
+          search={search}
+          sort={sort}
+          setSort={setSort}
+          setFavorites={setFavorites}
+        />
+      )
+      }
+
       <div id="favorites-section">
         <Favorites favorites={favorites}
           sort={sort}
@@ -67,7 +89,7 @@ function App() {
       </div>
       <Footer />
       <button id="btn-go-to-top" className="btn-go-to-top" onClick={scrollToTop}>
-        <FontAwesomeIcon icon={faChevronUp}/>
+        <FontAwesomeIcon icon={faChevronUp} />
       </button>
     </div>
   )
