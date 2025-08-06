@@ -1,0 +1,11 @@
+.favorites-card-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 6vh;
+    margin-bottom: 6vh;
+}
+
+.favorites-card-container h2{
+    margin-bottom: 3vh;
+}

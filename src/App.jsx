@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import CountryList from './components/CountryList'
+import { useState, useEffect } from 'react';
+import './App.css';
+import CountryList from './components/CountryList';
 import TypeWriter from './components/TypeWriter';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -9,6 +9,7 @@ import SortControl from './components/SortControl';
 import Favorites from './components/Favorites';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp, faStar } from '@fortawesome/free-solid-svg-icons';
+import FavoritesCard from './components/FavoritesCard';
 import CountryCard from './components/CountryCard';
 
 function App() {
@@ -61,32 +62,44 @@ function App() {
         </div>
       </div>
       {isTableView ? (
-        <CountryList
-          countries={countries}
-          loading={loading}
-          search={search}
-          sort={sort}
-          setSort={setSort}
-          favorites={favorites}
-          setFavorites={setFavorites} />
+        <> {/* react frament */}
+          <CountryList
+            countries={countries}
+            loading={loading}
+            search={search}
+            sort={sort}
+            setSort={setSort}
+            favorites={favorites}
+            setFavorites={setFavorites}
+          />
+          <div id="favorites-section">
+            <Favorites
+              favorites={favorites}
+              sort={sort}
+              setSort={setSort}
+            />
+          </div>
+        {/* react frament */} </> 
       ) : (
-        <CountryCard
-          countries={countries}
-          loading={loading}
-          favorites={favorites}
-          search={search}
-          sort={sort}
-          setSort={setSort}
-          setFavorites={setFavorites}
-        />
-      )
-      }
-
-      <div id="favorites-section">
-        <Favorites favorites={favorites}
-          sort={sort}
-          setSort={setSort} />
-      </div>
+        <>
+          <CountryCard
+            countries={countries}
+            loading={loading}
+            favorites={favorites}
+            search={search}
+            sort={sort}
+            setSort={setSort}
+            setFavorites={setFavorites}
+          />
+          <div id="favorites-section">
+          <FavoritesCard
+            favorites={favorites}
+            sort={sort}
+            setSort={setSort}
+          />
+          </div>
+        </>
+      )}
       <Footer />
       <button id="btn-go-to-top" className="btn-go-to-top" onClick={scrollToTop}>
         <FontAwesomeIcon icon={faChevronUp} />
