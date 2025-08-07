@@ -89,13 +89,22 @@ nav .center-menu-itens {
   align-items: center;
 }
 
+.menu-toggle{
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
 .text-typewriter {
   justify-content: center;
   font-size: 3rem;
   letter-spacing: 10px;
   font-family: monospace;
   border-right: 5px solid;
-  width: 0;
+  width: 29ch;
   white-space: nowrap;
   overflow: hidden;
   animation: typing 2s, cursor .4s step-end infinite alternate;
@@ -321,4 +330,66 @@ footer .linkedinIcon{
 
 .btn-go-to-top:hover {
   background-color: var(--segundary-color);
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 390px) {
+  .center-menu-itens,
+  .end-menu-itens {
+    flex-direction: column;
+    gap: 2vh;
+  }
+  .end-menu-itens{
+    margin-top: 2vh;
+    margin-bottom: .5vh;
+  }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 8vh;
+    left: 0;
+    width: 100vw;
+    background: var(--background-color);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    z-index: 10;
+    flex-direction: column;
+  }
+  .dropdown-menu.open {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+    justify-self: end;
+    margin-right: 2vw;
+  }
+  nav {
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  .brand{
+    justify-self: start;
+    margin-left: 2vw;
+  }
+
+  .text-typewriter {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    width: 24ch;
+    border-right: 5px solid;
+    animation: typing 1s, cursor .4s step-end infinite alternate;
+  }
+
+  @keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 24ch;
+  }
+}
+
 }
