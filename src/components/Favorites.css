@@ -5,6 +5,7 @@
     justify-content: center;
     margin-top: 6vh;
     margin-bottom: 6vh;
+    color: var(--text-color);
 }
 
 .favorites-container h2{

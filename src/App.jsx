@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp, faStar, faTh, faList } from '@fortawesome/free-solid-svg-icons';
 import FavoritesCard from './components/FavoritesCard';
 import CountryCard from './components/CountryCard';
+import DarkTheme from './components/DarkTheme';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
   const [sort, setSort] = useState({ keyToSort: "name", direction: "asc" });
   const [favorites, setFavorites] = useState([])
   const [isTableView, setIsTableView] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -59,6 +61,7 @@ function App() {
           <button onClick={toggleView} className='btn-toggle-view'>
             {isTableView ? <FontAwesomeIcon icon={faTh} />  : <FontAwesomeIcon icon={faList} />}
           </button>
+          <DarkTheme isDark={isDark} setIsDark={setIsDark}/>
         </div>
       </div>
       {isTableView ? (

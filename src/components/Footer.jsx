@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
     return (
@@ -11,10 +11,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                    alt="GitHub"
-                />
+                <FontAwesomeIcon icon={faGithub} className="githubIcon"/>
             </a>
             <a
                 href="https://www.linkedin.com/in/lucasadramalho"

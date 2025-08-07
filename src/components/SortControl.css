@@ -12,9 +12,17 @@
     padding: 10px;
     font-size: 1rem;
     border: none;
-    border-bottom: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: white;
+    border-bottom: 2px solid var(--primary-color);
+    box-shadow: 0 2px 8px var(--shadow-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 8px 8px 0 0;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.sort-select option {
+    background-color: var(--background-color);
+    color: var(--text-color-contrast);
 }
 
 .sort-select:focus {

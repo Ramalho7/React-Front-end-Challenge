@@ -1,12 +1,12 @@
-.card-container{
+.card-container {
     display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3vw;
-    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 1rem;
+    justify-items: center;
 }
 
 .country-card {
@@ -14,20 +14,20 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #ccc;
+    border: 1px solid;
     border-radius: 8px;
     padding: 16px;
-    width: 300px; 
+    width: 300px;
     height: 400px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    background-color: #fff; 
+    box-shadow: 0 4px 6px var(--shadow-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-.country-card-img-section{
+.country-card-img-section {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .country-card img {
@@ -37,13 +37,13 @@
     object-fit: cover;
 }
 
-.icon-country-card-favorite{
+.icon-country-card-favorite {
     position: relative;
     width: 100%;
     height: auto;
 }
 
-.icon-country-card-favorite button{
+.icon-country-card-favorite button {
     position: absolute;
     top: 0;
     right: 0;
