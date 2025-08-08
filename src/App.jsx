@@ -12,6 +12,7 @@ import { faChevronDown, faChevronUp, faStar, faTh, faList } from '@fortawesome/f
 import FavoritesCard from './components/FavoritesCard';
 import CountryCard from './components/CountryCard';
 import DarkTheme from './components/DarkTheme';
+import IntroModel from './components/IntroModel';
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
 
   return (
     <div>
+      <IntroModel/>
       <Header />
       <TypeWriter />
       <div className="search-sort-container">
