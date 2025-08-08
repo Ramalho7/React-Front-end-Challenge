@@ -48,12 +48,11 @@ const CountryList = ({ countries, loading, search, sort, setSort, favorites, set
                     <tr>
                         {headers.map((header, index) => (
                             <th key={index} onClick={() => handleHeaderClick(header)}>
-                                <span>
-                                    {header.label}
-                                    {sort.keyToSort === header.key && (
-                                        <FontAwesomeIcon icon={sort.direction === "asc" ? faCaretUp : faCaretDown} />
-                                    )}
-                                </span>
+                                <span>{header.label}</span>
+                                {sort.keyToSort === header.key && (
+                                    <FontAwesomeIcon icon={sort.direction === "asc" ? faCaretUp : faCaretDown} />
+                                )}
+
                             </th>
                         ))}
                     </tr>
