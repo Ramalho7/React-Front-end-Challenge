@@ -47,6 +47,9 @@ function App() {
 
   return (
     <div>
+      <button id="btn-go-to-top" className="btn-go-to-top" onClick={scrollToTop}>
+        <FontAwesomeIcon icon={faChevronUp} />
+      </button>
       <IntroModel/>
       <Header />
       <TypeWriter />
@@ -108,9 +111,6 @@ function App() {
         </>
       )}
       <Footer />
-      <button id="btn-go-to-top" className="btn-go-to-top" onClick={scrollToTop}>
-        <FontAwesomeIcon icon={faChevronUp} />
-      </button>
     </div>
   )
 }
