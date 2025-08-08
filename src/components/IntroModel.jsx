@@ -21,7 +21,8 @@ const IntroModel = () => {
                 <h2>Bem-vindo ao site!</h2>
                 <h3>Funcionalidades do sistema:</h3>
                 <ol className="features-list">
-                    <li>Visualizar lista de países com: nome, bandeira, região e população</li>
+                    <li>Visualizar lista e card de países com: nome, bandeira, região e população e botão para favorito</li>
+                    <li>Alterar modo de visualização de lista para card</li>
                     <li>Pesquisar por países pelo nome</li>
                     <li>Ordenar a visualização por população (crescente ou decrescente) e região (de A-Z ou de Z-A)</li>
                     <li>Adicionar países aos favoritos e visualizar em uma seção separada</li>
