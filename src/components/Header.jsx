@@ -11,18 +11,22 @@ const Header = () => {
                 <div className="brand">
                     <p> <FontAwesomeIcon icon={faCode} /> Home</p>
                 </div>
+                <ul className="menu-links">
+                    <li>Paises</li>
+                    <li>Favoritos</li>
+                    <li>Sobre</li>
+                </ul>
+                <button className="contact-button">Contact</button>
                 <button className="menu-toggle" onClick={() => setOpen(!open)}>
                     <FontAwesomeIcon icon={faBars} />
                 </button>
                 <div className={`dropdown-menu ${open ? "open" : ""}`}>
-                    <div className="center-menu-itens">
-                        <p><FontAwesomeIcon icon={faGlobe} /> Countries</p>
-                        <p><FontAwesomeIcon icon={faHeart} /> Favorites</p>
-                        <p><FontAwesomeIcon icon={faList} /> Country List</p>
-                    </div>
-                    <div className="end-menu-itens">
-                        <p><FontAwesomeIcon icon={faInfoCircle} /> Sobre</p>
-                    </div>
+                    <ul>
+                        <li>Paises</li>
+                        <li>Favoritos</li>
+                        <li>Sobre</li>
+                        <li><button className="contact-button">Contact</button></li>
+                    </ul>
                 </div>
             </nav>
         </header>
