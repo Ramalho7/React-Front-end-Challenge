@@ -5,7 +5,6 @@ import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 const Footer = () => {
     return (
         <footer>
-            <p>&copy; 2025 Sistema react restcountries</p>
             <a
                 href="https://github.com/Ramalho7/Login-System-React"
                 target="_blank"

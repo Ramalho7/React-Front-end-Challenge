@@ -46,27 +46,29 @@ function App() {
   }
 
   return (
-    <div>
-      <button id="btn-go-to-top" className="btn-go-to-top" onClick={scrollToTop}>
-        <FontAwesomeIcon icon={faChevronUp} />
-      </button>
-      <IntroModel/>
+    <div className="App">
+
+      <IntroModel />
       <Header />
       <TypeWriter />
       <div className="search-sort-container">
         <div className="search-sort">
-          <SearchBar onSearch={setSearch} />
-          <SortControl sort={sort} setSort={setSort} />
-          <button className="btn-go-to-favorites" onClick={() => document.getElementById("favorites-section").scrollIntoView({ behavior: "smooth" })}>
-            <span>Favoritos</span>
-            <div className="icon-go-to-favorites">
-              <FontAwesomeIcon icon={faChevronDown} />
-            </div>
-          </button>
-          <button onClick={toggleView} className='btn-toggle-view'>
-            {isTableView ? <FontAwesomeIcon icon={faTh} />  : <FontAwesomeIcon icon={faList} />}
-          </button>
-          <DarkTheme isDark={isDark} setIsDark={setIsDark}/>
+          <div className="search">
+            <SearchBar onSearch={setSearch} />
+          </div>
+          <div className="sort-util-buttons">
+            <SortControl sort={sort} setSort={setSort} />
+            <button className="btn-go-to-favorites" onClick={() => document.getElementById("favorites-section").scrollIntoView({ behavior: "smooth" })}>
+              <span>Favoritos</span>
+              <div className="icon-go-to-favorites">
+                <FontAwesomeIcon icon={faChevronDown} />
+              </div>
+            </button>
+            <button onClick={toggleView} className='btn-toggle-view'>
+              {isTableView ? <FontAwesomeIcon icon={faTh} /> : <FontAwesomeIcon icon={faList} />}
+            </button>
+            <DarkTheme isDark={isDark} setIsDark={setIsDark} />
+          </div>
         </div>
       </div>
       {isTableView ? (
@@ -77,8 +79,6 @@ function App() {
             search={search}
             sort={sort}
             setSort={setSort}
-            favorites={favorites}
-            setFavorites={setFavorites}
           />
           <div id="favorites-section">
             <Favorites
@@ -110,6 +110,9 @@ function App() {
           </div>
         </>
       )}
+      <button id="btn-go-to-top" className="btn-go-to-top" onClick={scrollToTop}>
+        <FontAwesomeIcon icon={faChevronUp} />
+      </button>
       <Footer />
     </div>
   )

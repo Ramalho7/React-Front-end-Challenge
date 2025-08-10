@@ -13,7 +13,7 @@ const SortControl = ({ sort, setSort }) => {
         <div className="sort-container">
             <div className="custom-select">
                 <select id="sort" className='sort-select' onChange={handleSortChange} value={`&{sort.keyToSort}-&{sort.direction}`}>
-                    <option value="" defaultValue="Selecione como Ordenar...">Selecione como Ordenar...</option>
+                    <option value="" defaultValue="Selecione como Ordenar...">Ordernar por...</option>
                     <option value="population-asc">População (Crescente)</option>
                     <option value="population-desc">População (Decrescente)</option>
                     <option value="region-asc">Região (A-Z)</option>

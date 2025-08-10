@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faStarRegular } from "@fortawesome/free-regular-svg-icons";
 
-const CountryCard = ({ countries, loading, favorites, setFavorites, search, sort, setSort }) => {
+const CountryCard = ({ countries, loading, favorites, setFavorites, search, sort }) => {
     const toggleFavorite = (country) => {
         if (favorites.some((fav) => fav.name.common === country.name.common)) {
             setFavorites(favorites.filter((fav) => fav.name.common !== country.name.common));

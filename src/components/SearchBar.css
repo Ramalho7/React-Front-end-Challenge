@@ -1,13 +1,13 @@
-.SearchBar {
+form {
     width: 100%;
-}
-
-form{
-    width: 100%;
+    display: flex;
 }
 
 form input {
     width: 100%;
+}
+
+form input {
     padding: 10px;
     font-size: 1rem;
     border: none;
@@ -17,11 +17,19 @@ form input {
     color: var(--text-color);
     border-radius: 8px 8px 0 0;
     transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    width: 100vw;
 }
 
-form input:focus{
+form input:focus {
     outline: none;
     background-color: var(--third-color);
     border-bottom: 2.5px solid var(--primary-color);
 }
 
+@media (max-width: 390px) {
+    form input {
+        width: 85vw; 
+        font-size: 1rem; 
+        height: 40px; 
+    }
+}

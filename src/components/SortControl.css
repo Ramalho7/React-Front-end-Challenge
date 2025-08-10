@@ -1,14 +1,5 @@
-.sort-container {
-    width: 100%;
-}
-
-.custom-select {
-    position: relative;
-    width: 100%;
-}
-
 .sort-select {
-    width: 100%;
+    width: auto;
     padding: 10px;
     font-size: 1rem;
     border: none;
@@ -31,3 +22,27 @@
     background-color: var(--segundary-color);
 }
 
+@media (max-width: 390px) {
+
+    .sort-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: fit-content; 
+}
+
+    .custom-select {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+    }
+
+    .sort-select {
+        margin: 0 auto;
+        width: 150px;
+        height: 40px;
+        font-size: 1rem;
+        padding: 5px;
+    }
+}
