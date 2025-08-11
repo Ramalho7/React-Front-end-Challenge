@@ -7,9 +7,10 @@ Este projeto é uma aplicação React construída com Vite que exibe informaçõ
 - Buscar e exibir dados de países da API REST Countries.
 - Pesquisar países pelo nome.
 - Filtrar países por região.
+- Ordernar países pelo header da lista.
 - Visualizar informações detalhadas sobre um país selecionado.
-- Alterar tema de dark par light
-- Altera o modo de visualização de lista para card
+- Alterar tema de dark par light.
+- Altera o modo de visualização de lista para card.
 
 ## Como rodar:
 
