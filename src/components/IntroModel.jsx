@@ -3,9 +3,8 @@ import "./IntroModel.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const IntroModel = () => {
-    const [showModal, setShowModal] = useState(false);
-
+const IntroModel = ({showModal, setShowModal}) => {
+    
     useEffect(() => {
         setShowModal(true)
     }, [])

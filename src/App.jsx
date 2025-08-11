@@ -24,6 +24,7 @@ function App() {
   const [favorites, setFavorites] = useState([])
   const [isTableView, setIsTableView] = useState(true);
   const [isDark, setIsDark] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -45,9 +46,9 @@ function App() {
   return (
     <div className="App" style={{ position: "relative" }}>
 
-      <IntroModel />
+      <IntroModel showModal={showModal} setShowModal={setShowModal}/>
       <Header />
-      <TypeWriter />
+      <TypeWriter modalClosed={!showModal}/>
       <div className="search-sort-container">
         <div className="search-sort">
           <div className="search">

@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const TypeWriter = () => {
+const TypeWriter = ({ modalClosed}) => {
+
+    const [showAnimation, setShowAnimation] = useState(false)
+
+    useEffect(() => {
+        if(modalClosed){
+            setShowAnimation(true)
+        }else{
+            setShowAnimation(false)
+        }
+        
+    }, [modalClosed])
+
     return (
         <div className="container-typewriter">
-            <p className="text-typewriter">Bem-vindo ao Sistema!</p>
+            <p className={`text-typewriter${showAnimation ? "" : "no-animation"}`}>Bem-vindo ao Sistema!</p>
         </div>
     )
 }
