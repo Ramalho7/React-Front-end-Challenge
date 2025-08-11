@@ -9,7 +9,7 @@ const Header = () => {
         <header>
             <nav>
                 <div className="brand">
-                    <p> <FontAwesomeIcon icon={faCode} /> Home</p>
+                    <a href="#"> <FontAwesomeIcon icon={faCode} /> Home</a>
                 </div>
                 <ul className="menu-links">
                     <li>Paises</li>

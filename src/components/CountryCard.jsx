@@ -1,9 +1,8 @@
 import React from "react";
 import Spinner from "./Spinner";
-import "./CountryCard.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { faStar as faStarRegular } from "@fortawesome/free-regular-svg-icons";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import "./CountryCard.css"
 
 const CountryCard = ({ countries, loading, favorites, setFavorites, search, sort }) => {
     const toggleFavorite = (country) => {
@@ -31,12 +30,10 @@ const CountryCard = ({ countries, loading, favorites, setFavorites, search, sort
                     : country.name.common.toLowerCase().includes(search.toLowerCase());
             }).map((country, index) => (
                 <div key={country.name.common} className="country-card fade-in-country-card" style={{ animationDelay: `${index * 0.05}s` }}>
-                    <div className="icon-country-card-favorite">
+                    <div className="country-card-favorite">
                         <button onClick={() => toggleFavorite(country)}>
-                            <FontAwesomeIcon
-                                icon={favorites.some(fav => fav.name.common === country.name.common) ? faStar : faStarRegular}
-                                style={{ color: favorites.some(fav => fav.name.common === country.name.common) ? "gold" : "gray" }}
-                            />
+                            <span className="button-text">Favoritar</span>
+                            <FontAwesomeIcon icon={faHeart} className="heart-icon" />
                         </button>
                     </div>
                     <div className="country-card-img-section">

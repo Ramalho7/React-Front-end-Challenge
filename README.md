@@ -1,12 +1,59 @@
-# React + Vite
+# Desafio React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação React construída com Vite que exibe informações sobre países utilizando a API REST Countries.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Buscar e exibir dados de países da API REST Countries.
+- Pesquisar países pelo nome.
+- Filtrar países por região.
+- Visualizar informações detalhadas sobre um país selecionado.
+- Alterar tema de dark par light
+- Altera o modo de visualização de lista para card
 
-## Expanding the ESLint configuration
+## Como rodar:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Siga estas instruções para configurar e executar o projeto localmente.
+
+### Pré-requisitos
+
+Certifique-se de ter os seguintes itens instalados:
+
+- [Node.js](https://nodejs.org/) (versão 22 ou superior)
+- [npm](https://www.npmjs.com/) (vem junto com o Node.js)
+
+### Instalação
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/Ramalho7/React-Front-end-Challenge.git
+   ```
+
+2. Navegue até o diretório do projeto:
+
+   ```bash
+   cd React-Front-end-Challenge
+   ```
+
+3. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+### Executando a Aplicação
+
+Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+A aplicação estará disponível em `http://localhost:5173`.
+
+## Estrutura do Projeto
+
+- `src/`: Contém o código-fonte da aplicação.
+- `public/`: Contém os arquivos estáticos.
+- `README.md`: Documentação do projeto.

@@ -37,14 +37,37 @@
     object-fit: cover;
 }
 
-.icon-country-card-favorite {
+.country-card-favorite {
     position: relative;
     width: 100%;
     height: auto;
 }
 
-.icon-country-card-favorite button {
+.country-card-favorite button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 0;
     right: 0;
+    border: none;
+    cursor: pointer;
+    padding: 0.2vw 0.2vh;
+    background-color: var(--segundary-color);
+    border-radius: 5px 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+.country-card-favorite button .heart-icon {
+    display: none;
+    color: #e63946;
+}
+
+.country-card-favorite button:hover .button-text {
+    display: none;
+}
+
+.country-card-favorite button:hover .heart-icon {
+    display: inline-block;
+}
+

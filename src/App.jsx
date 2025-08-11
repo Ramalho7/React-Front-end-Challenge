@@ -13,6 +13,7 @@ import FavoritesCard from './components/FavoritesCard';
 import CountryCard from './components/CountryCard';
 import DarkTheme from './components/DarkTheme';
 import IntroModel from './components/IntroModel';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
 
@@ -46,7 +47,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App" style={{ position: "relative" }}>
 
       <IntroModel />
       <Header />
@@ -110,9 +111,7 @@ function App() {
           </div>
         </>
       )}
-      <button id="btn-go-to-top" className="btn-go-to-top" onClick={scrollToTop}>
-        <FontAwesomeIcon icon={faChevronUp} />
-      </button>
+      <ScrollToTop/>
       <Footer />
     </div>
   )
