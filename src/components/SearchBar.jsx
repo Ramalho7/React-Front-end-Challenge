@@ -19,7 +19,7 @@ const SearchBar = ({onSearch}) => {
                 <input type="search"
                 value={searchTerm}
                 onChange={handleInputChange}
-                placeholder="Digite para pesquisar..."
+                placeholder="Pesquise pelo nome do país..."
                 ></input>
 
             </form>
