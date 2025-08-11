@@ -16,7 +16,7 @@ const TypeWriter = ({ modalClosed }) => {
     return (
         <div className="container-typewriter">
             {showAnimation &&(
-                <p className="text-typewriter">Bem vindo ao sistema</p>
+                <p className="text-typewriter">Bem vindo ao sistema!</p>
             )}
         </div>
     )
