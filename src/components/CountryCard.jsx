@@ -32,8 +32,18 @@ const CountryCard = ({ countries, loading, favorites, setFavorites, search, sort
                 <div key={country.name.common} className="country-card fade-in-country-card" style={{ animationDelay: `${index * 0.05}s` }}>
                     <div className="country-card-favorite">
                         <button onClick={() => toggleFavorite(country)}>
-                            <span className="button-text">Favoritar</span>
-                            <FontAwesomeIcon icon={faHeart} className="heart-icon" />
+                            <span className="button-text">
+                                {favorites.some((fav) => fav.name.common === country.name.common) ? "Favoritado" : "Favoritar"}
+                            </span>
+                            <FontAwesomeIcon
+                                icon={faHeart}
+                                className="heart-icon"
+                                style={{
+                                    color: favorites.some((fav) => fav.name.common === country.name.common)
+                                        ? "#e63946"
+                                        : "#aaa",
+                                }}
+                            />
                         </button>
                     </div>
                     <div className="country-card-img-section">

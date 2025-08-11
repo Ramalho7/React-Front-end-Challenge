@@ -59,12 +59,15 @@
 }
 
 .country-card-favorite button .heart-icon {
-    display: none;
-    color: #e63946;
+    display: inline-block;
 }
 
 .country-card-favorite button:hover .button-text {
     display: none;
+}
+
+.country-card-favorite button:hover .heart-icon {
+    transform: scale(1.2);
 }
 
 .country-card-favorite button:hover .heart-icon {

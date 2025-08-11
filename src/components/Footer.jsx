@@ -12,13 +12,6 @@ const Footer = () => {
             >
                 <FontAwesomeIcon icon={faGithub} className="githubIcon"/>
             </a>
-            <a
-                href="https://www.linkedin.com/in/lucasadramalho"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <FontAwesomeIcon icon={faLinkedin} className="linkedinIcon" />
-            </a>
         </footer>
     )
 }

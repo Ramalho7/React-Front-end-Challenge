@@ -16,7 +16,7 @@ const Header = () => {
                     <li>Favoritos</li>
                     <li>Sobre</li>
                 </ul>
-                <button className="contact-button">Contact</button>
+                <button className="contact-button">Contato</button>
                 <button className="menu-toggle" onClick={() => setOpen(!open)}>
                     <FontAwesomeIcon icon={faBars} />
                 </button>
@@ -25,7 +25,7 @@ const Header = () => {
                         <li>Paises</li>
                         <li>Favoritos</li>
                         <li>Sobre</li>
-                        <li><button className="contact-button">Contact</button></li>
+                        <li><button className="contact-button">Contato</button></li>
                     </ul>
                 </div>
             </nav>

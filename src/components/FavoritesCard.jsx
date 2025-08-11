@@ -2,7 +2,7 @@ import React from "react";
 import "./FavoritesCard.css";
 import CountryCard from "./CountryCard";
 
-const FavoritesCard = ({ favorites, sort, setSort, setFavorites }) => { 
+const FavoritesCard = ({ favorites, sort, setSort, setFavorites, search}) => { 
     const filteredFavorites = favorites;
 
     return (
@@ -14,7 +14,7 @@ const FavoritesCard = ({ favorites, sort, setSort, setFavorites }) => {
                 <CountryCard
                     countries={filteredFavorites}
                     loading={false}
-                    search=""
+                    search={search}
                     sort={sort }
                     setSort={setSort}
                     favorites={favorites}

@@ -84,6 +84,7 @@ function App() {
           <div id="favorites-section">
             <Favorites
               favorites={favorites}
+              search={search}
               sort={sort}
               setSort={setSort}
               setFavorites={setFavorites}
@@ -104,6 +105,7 @@ function App() {
           <div id="favorites-section">
             <FavoritesCard
               favorites={favorites}
+              search={search}
               sort={sort}
               setSort={setSort}
               setFavorites={setFavorites}

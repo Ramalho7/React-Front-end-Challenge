@@ -1,0 +1,24 @@
+.country-list-favorite button {
+    border: none;
+    cursor: pointer;
+    padding: 0.2vw 0.2vh;
+    background-color: var(--primary-color);
+    border-radius: 5px 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.country-list-favorite button .heart-icon {
+    display: inline-block;
+}
+
+.country-list-favorite button:hover .button-text {
+    display: none;
+}
+
+.country-list-favorite button:hover .heart-icon {
+    transform: scale(1.2);
+}
+
+.country-list-favorite button:hover .heart-icon {
+    display: inline-block;
+}

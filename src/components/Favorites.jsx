@@ -2,7 +2,7 @@ import React from "react";
 import "./Favorites.css";
 import CountryList from "./CountryList";
 
-const Favorites = ({ favorites, sort, setSort, setFavorites }) => {
+const Favorites = ({ favorites, sort, setSort, setFavorites, search }) => {
 
     const filteredFavorites = favorites;
 
@@ -15,10 +15,11 @@ const Favorites = ({ favorites, sort, setSort, setFavorites }) => {
                 <CountryList
                     countries={filteredFavorites}
                     loading={false}
-                    search=""
+                    search={search}
                     sort={sort }
                     setSort={setSort}
                     favorites={favorites}
+                    showFavoriteButton={true}
                     setFavorites={setFavorites}
                 />
             )}
