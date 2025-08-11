@@ -157,10 +157,6 @@ li:hover::after {
   color: var(--title-color);
 }
 
-.no-animation{
-  animation: none;
-}
-
 @keyframes cursor {
   50% {
     border-color: transparent;

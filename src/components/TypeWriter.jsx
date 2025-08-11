@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const TypeWriter = ({ modalClosed}) => {
+const TypeWriter = ({ modalClosed }) => {
 
     const [showAnimation, setShowAnimation] = useState(false)
 
@@ -15,7 +15,9 @@ const TypeWriter = ({ modalClosed}) => {
 
     return (
         <div className="container-typewriter">
-            <p className={`text-typewriter${showAnimation ? "" : "no-animation"}`}>Bem-vindo ao Sistema!</p>
+            {showAnimation &&(
+                <p className="text-typewriter">Bem vindo ao sistema</p>
+            )}
         </div>
     )
 }
