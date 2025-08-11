@@ -55,5 +55,4 @@ A aplicação estará disponível em `http://localhost:5173`.
 ## Estrutura do Projeto
 
 - `src/`: Contém o código-fonte da aplicação.
-- `public/`: Contém os arquivos estáticos.
 - `README.md`: Documentação do projeto.
