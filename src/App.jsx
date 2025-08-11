@@ -38,10 +38,6 @@ function App() {
     });
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   const toggleView = () => {
     setIsTableView(!isTableView);
   }
