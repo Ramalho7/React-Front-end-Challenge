@@ -27,7 +27,6 @@ const CountryList = ({ countries, loading, search, sort, setSort, showFavoriteBu
             keyToSort: header.key,
             direction: header.key === sort.keyToSort ? (sort.direction === "asc" ? "desc" : "asc") : "asc",
         });
-        console.log(`Header clicked: ${header.key}`);
     }
 
 

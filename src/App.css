@@ -404,14 +404,13 @@ footer a:visited {
   tbody td {
     text-align: center;
     padding: 0.5rem;
-    word-wrap: nowrap;
     vertical-align: middle;
   }
 
   th,
   td {
     display: table-cell;
-    white-space: break-word;
+    overflow-wrap: break-word;
     font-size: 0.8rem;
   }
 
