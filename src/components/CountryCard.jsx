@@ -24,11 +24,7 @@ const CountryCard = ({ countries, loading, favorites, setFavorites, search, sort
 
     return (
         <div className="card-container">
-            {getSortedArray(countries).filter((country) => {
-                return search.toLowerCase() === ''
-                    ? country
-                    : country.name.common.toLowerCase().includes(search.toLowerCase());
-            }).map((country, index) => (
+            {getSortedArray(countries).map((country, index) => (
                 <div key={country.name.common} className="country-card fade-in-country-card" style={{ animationDelay: `${index * 0.05}s` }}>
                     <div className="country-card-favorite">
                         <button onClick={() => toggleFavorite(country)}>
