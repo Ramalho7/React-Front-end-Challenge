@@ -14,6 +14,7 @@ import CountryCard from './components/CountryCard';
 import DarkTheme from './components/DarkTheme';
 import IntroModel from './components/IntroModel';
 import ScrollToTop from './components/ScrollToTop';
+import Pagination from './components/Pagination';
 
 function App() {
 
@@ -25,6 +26,34 @@ function App() {
   const [isTableView, setIsTableView] = useState(true);
   const [isDark, setIsDark] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itensPerPage, setItensPerPage] = useState(10);
+  const [favoritesCurrentPage, setFavoritesCurrentPage] = useState(1);
+  const [favoritesItensPerPage, setFavoritesItensPerPage] = useState(5);
+
+  const filteredCountries = countries.filter(country => {
+    if (!search) return true;
+    const query = search.toLocaleLowerCase();
+    const name = country?.name?.common?.toLowerCase() ?? "";
+    return name.includes(query)
+  })
+
+  const filteredFavCountries = favorites.filter(country => {
+    if (!search) return true;
+    const query = search.toLocaleLowerCase();
+    const name = country?.name?.common?.toLowerCase() ?? "";
+    return name.includes(query)
+  })
+
+  const lastItemIndex = currentPage * itensPerPage;
+  const firstItemIndex = lastItemIndex - itensPerPage;
+
+  const currentItem = filteredCountries.slice(firstItemIndex, lastItemIndex)
+
+  const favLastItemIndex = favoritesCurrentPage * favoritesItensPerPage;
+  const favFirstItemIndex = favLastItemIndex - favoritesItensPerPage;
+
+  const favoritesToShow = filteredFavCountries.slice(favFirstItemIndex, favLastItemIndex)
 
   useEffect(() => {
     fetch(
@@ -39,16 +68,20 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [search]);
+
   const toggleView = () => {
     setIsTableView(!isTableView);
   }
 
   return (
-    <div className="App" style={{ position: "relative" }}>
+    <div className="App">
 
-      <IntroModel showModal={showModal} setShowModal={setShowModal}/>
+      <IntroModel showModal={showModal} setShowModal={setShowModal} />
       <Header />
-      <TypeWriter modalClosed={!showModal}/>
+      <TypeWriter modalClosed={!showModal} />
       <div className="search-sort-container">
         <div className="search-sort">
           <div className="search">
@@ -72,26 +105,36 @@ function App() {
       {isTableView ? (
         <> {/* react frament */}
           <CountryList
-            countries={countries}
+            countries={currentItem}
             loading={loading}
             search={search}
             sort={sort}
             setSort={setSort}
           />
+          <Pagination
+            totalItens={countries.length}
+            itensPerPage={itensPerPage}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage} />
           <div id="favorites-section">
             <Favorites
               favorites={favorites}
+              favoritesToShow={favoritesToShow}
               search={search}
               sort={sort}
               setSort={setSort}
-              setFavorites={setFavorites}
-            />
+              setFavorites={setFavorites} />
+            <Pagination
+              totalItens={favorites.length}
+              itensPerPage={favoritesItensPerPage}
+              currentPage={favoritesCurrentPage}
+              setCurrentPage={setFavoritesCurrentPage} />
           </div>
           {/* react frament */} </>
       ) : (
         <>
           <CountryCard
-            countries={countries}
+            countries={currentItem}
             loading={loading}
             favorites={favorites}
             search={search}
@@ -99,18 +142,30 @@ function App() {
             setSort={setSort}
             setFavorites={setFavorites}
           />
+          <Pagination
+            totalItens={countries.length}
+            itensPerPage={itensPerPage}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage} />
           <div id="favorites-section">
             <FavoritesCard
               favorites={favorites}
+              favoritesToShow={favoritesToShow}
               search={search}
               sort={sort}
               setSort={setSort}
               setFavorites={setFavorites}
             />
+            <Pagination
+              totalItens={favorites.length}
+              favoritesToShow={favoritesToShow}
+              itensPerPage={favoritesItensPerPage}
+              currentPage={favoritesCurrentPage}
+              setCurrentPage={setFavoritesCurrentPage} />
           </div>
         </>
       )}
-      <ScrollToTop/>
+      <ScrollToTop />
       <Footer />
     </div>
   )

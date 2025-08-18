@@ -21,7 +21,6 @@ const SearchBar = ({onSearch}) => {
                 onChange={handleInputChange}
                 placeholder="Pesquise pelo nome do país..."
                 ></input>
-
             </form>
         </div>
     )

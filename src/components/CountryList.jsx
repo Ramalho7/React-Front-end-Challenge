@@ -57,46 +57,40 @@ const CountryList = ({ countries, loading, search, sort, setSort, showFavoriteBu
                     </tr>
                 </thead>
                 <tbody>
-                    {getSortedArray(countries)
-                        .filter((country) => {
-                            return search.toLowerCase() === ''
-                                ? country
-                                : country.name.common.toLowerCase().includes(search.toLowerCase());
-                        })
-                        .map((country, index) => (
-                            <tr key={country.name.common}>
-                                <td>
-                                    <img
-                                        src={country.flags.png}
-                                        alt={country.name.common}
-                                        width={80}
-                                        height={80}
-                                    />
+                    {getSortedArray(countries).map((country, index) => (
+                        <tr key={country.name.common}>
+                            <td>
+                                <img
+                                    src={country.flags.png}
+                                    alt={country.name.common}
+                                    width={80}
+                                    height={80}
+                                />
+                            </td>
+                            <td>{country.name.common}</td>
+                            <td>{country.region}</td>
+                            <td>{country.population.toLocaleString()}</td>
+                            {showFavoriteButton && (
+                                <td className="country-list-favorite">
+                                    <button onClick={() => toggleFavorite(country)}>
+                                        <span className="button-text">
+                                            {favorites.some((fav) => fav.name.common === country.name.common) ? "Favoritado" : "Favoritar"}
+                                        </span>
+                                        <FontAwesomeIcon
+                                            icon={faHeart}
+                                            className="heart-icon"
+                                            style={{
+                                                color: favorites.some((fav) => fav.name.common === country.name.common)
+                                                    ? "#e63946"
+                                                    : "#aaa",
+                                            }}
+                                        />
+                                    </button>
                                 </td>
-                                <td>{country.name.common}</td>
-                                <td>{country.region}</td>
-                                <td>{country.population.toLocaleString()}</td>
-                                {showFavoriteButton && (
-                                    <td className="country-list-favorite">
-                                        <button onClick={() => toggleFavorite(country)}>
-                                            <span className="button-text">
-                                                {favorites.some((fav) => fav.name.common === country.name.common) ? "Favoritado" : "Favoritar"}
-                                            </span>
-                                            <FontAwesomeIcon
-                                                icon={faHeart}
-                                                className="heart-icon"
-                                                style={{
-                                                    color: favorites.some((fav) => fav.name.common === country.name.common)
-                                                        ? "#e63946"
-                                                        : "#aaa",
-                                                }}
-                                            />
-                                        </button>
-                                    </td>
-                                )
-                                }
-                            </tr>
-                        ))}
+                            )
+                            }
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>

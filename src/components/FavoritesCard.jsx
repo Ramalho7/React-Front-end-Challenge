@@ -2,8 +2,9 @@ import React from "react";
 import "./FavoritesCard.css";
 import CountryCard from "./CountryCard";
 
-const FavoritesCard = ({ favorites, sort, setSort, setFavorites, search}) => { 
-    const filteredFavorites = favorites;
+const FavoritesCard = ({ favorites, favoritesToShow, sort, setSort, setFavorites, search}) => { 
+    
+    const filteredFavorites = favoritesToShow ?? favorites;
 
     return (
         <div className="favorites-card-container">
