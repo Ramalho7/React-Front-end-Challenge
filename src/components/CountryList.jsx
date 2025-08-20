@@ -22,22 +22,6 @@ const CountryList = ({ countries, loading, search, sort, setSort, showFavoriteBu
         { key: "population", label: "População" },
     ];
 
-    function handleHeaderClick(header) {
-        setSort({
-            keyToSort: header.key,
-            direction: header.key === sort.keyToSort ? (sort.direction === "asc" ? "desc" : "asc") : "asc",
-        });
-    }
-
-
-    function getSortedArray(arrayToSort) {
-        if (sort.direction === "asc") {
-            return arrayToSort.sort((a, b) => (a[sort.keyToSort] > b[sort.keyToSort] ? 1 : -1))
-        }
-        return arrayToSort.sort((a, b) => (a[sort.keyToSort] > b[sort.keyToSort] ? -1 : 1))
-    }
-
-
     if (loading) return <Spinner />;
 
     return (
@@ -57,7 +41,7 @@ const CountryList = ({ countries, loading, search, sort, setSort, showFavoriteBu
                     </tr>
                 </thead>
                 <tbody>
-                    {getSortedArray(countries).map((country, index) => (
+                    {countries.map((country, index) => (
                         <tr key={country.name.common}>
                             <td>
                                 <img

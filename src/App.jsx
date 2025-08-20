@@ -37,13 +37,12 @@ function App() {
     const name = country?.name?.common?.toLowerCase() ?? "";
     return name.includes(query)
   })
-
-  const filteredFavCountries = favorites.filter(country => {
-    if (!search) return true;
-    const query = search.toLocaleLowerCase();
-    const name = country?.name?.common?.toLowerCase() ?? "";
-    return name.includes(query)
-  })
+  .sort((a,b) => {
+    if (sort.direction === "asc"){
+      return a[sort.keyToSort] > b[sort.keyToSort] ? 1 : -1;
+    }
+    return a[sort.keyToSort] > b[sort.keyToSort] ? -1 : 1;
+  });
 
   const lastItemIndex = currentPage * itensPerPage;
   const firstItemIndex = lastItemIndex - itensPerPage;
@@ -53,7 +52,7 @@ function App() {
   const favLastItemIndex = favoritesCurrentPage * favoritesItensPerPage;
   const favFirstItemIndex = favLastItemIndex - favoritesItensPerPage;
 
-  const favoritesToShow = filteredFavCountries.slice(favFirstItemIndex, favLastItemIndex)
+  const favoritesToShow = favorites.slice(favFirstItemIndex, favLastItemIndex)
 
   useEffect(() => {
     fetch(
